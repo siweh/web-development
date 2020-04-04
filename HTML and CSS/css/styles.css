@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: Arial, "Lato", sans-serif;
+    font-family: Arial;
 }
 
 .slide-container{
@@ -10,7 +10,7 @@ body{
     top: 0;
     width: 100%;
     height: 100vh;
-    animation: animate 16s ease-in-out infinite;
+    animation: animate 15s ease-in-out infinite;
     background-size: cover;
 }
 
@@ -53,46 +53,89 @@ body{
     color: white;
 }
 
-.sideNav {
-    height: 100%;
-    width: 0px;
+#navBar {
     position: fixed;
-    z-index: 1;
-    top: 0px;
-    right: 0px;
-    background-color: aqua;
-    overflow-x: hidden; 
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sideNav a {
-    padding: 8px, 8px, 8px, 32px;
-    font-size: 25px;
-    color: black;
-    display: block;
-    transition: 0.3s;
-}
-
-.sideNav a:hover{
-    color: #f1f1f1;
-}
-
-.sideNav .closeButton{
-    position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-right: 50px;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(181, 214, 241);
+    display: flex;
+    z-index: 1000;
+    float: right;
+}
+
+#navBar .button {
+    z-index: 1000;
+    position: relative;
+    scrollbar-width: none;
+    background-repeat: no repeat;
+    box-sizing: inherit;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    color: aliceblue;
+    word-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    line-height: inherit;
+    font-family: inherit;
+    float: right;
+}
+
+.toggle-btn {
+    width: 60px;
+    height: 100%;
+    background-color: rgb(72, 94, 204);
+    background-image: url(../images/56763.png);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    opacity: 0.5;
+}
+
+.openNav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: calc(100vh - 60vh);
+    padding: 0 5px;
+    background-color: rgb(38, 38, 122);
+    z-index: 1000;
+}
+
+.openNav ul {
+    padding-top: 16px;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.openNav ul li {
+    line-height: 60px;
+    list-style: none;
+}
+.openNav ul li a {
+    display: block;
+    height: 60px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-family: arial;
+    font-size: 17px;
+    white-space: nowrap;
 }
 
 /* On smaller screens, where height is less than 450px, then change the style of the sidenav
 (to be less padding and a smaller font size*/
 
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
+/* @media screen and (max-height: 450px) {
+    .menuBar {padding-top: 15px;}
+    .menuBar a {font-size: 18px;}
+} */
 
 @keyframes animate{
     0%,100%{
